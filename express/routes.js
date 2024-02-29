@@ -15,7 +15,7 @@ function setupRoutes(ext) {
     FdkRoutes.get(["/:cluster_id/fp/install", "/fp/install"], async (req, res, next) => {
         // ?company_id=1&client_id=123313112122
         try {
-            const cluster_id = req.params.cluster_id;
+            const cluster_id = req.query.cluster_url || req.params.cluster_id;
             if (cluster_id) {
                 ext = ExtensionFactory.getExtension(cluster_id)
             }

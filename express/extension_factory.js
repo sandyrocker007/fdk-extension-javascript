@@ -8,7 +8,7 @@ class ExtensionFactory {
     static getExtension(clusterId) {
         const clusterExt = ExtensionFactory._extensionMap[clusterId]
         if (clusterId !== null && !clusterExt) {
-            throw FdkInvalidCluster(`Extension instance not found for clusterId ${clusterId}`);
+            throw new FdkInvalidCluster(`Extension instance not found for clusterId ${clusterId}`);
         }
         return clusterExt;
     }
